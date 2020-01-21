@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func main () {
+  fmt.Println("There is a carven entrance here and a path to the east")
+  var command = "go inside"
+
+  switch command {
+  case "go east":
+    fmt.Println("You head further up the mountain.")
+  case "enter cave", "go inside":
+    fmt.Println("You find yourself in a dimly lit carven.")
+  case "read sign":
+    fmt.Println("The sign reads 'No Minors'.")
+  default:
+    fmt.Println("Didn't quite get that.")
+  }
+
+  var room = "lake"
+  switch {
+  case room == "cave":
+    fmt.Println("You head further up the mountain.")
+  case room == "lake":
+    fmt.Println("The ice seems solid enough.")
+    fallthrough
+  case room == "underwater":
+    fmt.Println("The water is freezing cold.")
+  }
+}
